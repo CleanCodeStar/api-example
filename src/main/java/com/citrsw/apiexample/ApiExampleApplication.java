@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 @MapperScan("com.citrsw.apiexample.mapper")
 @EnableAsync
-@ApiEnable(name = "JavaApiDocs示例", underscore = true,actives = {"test","pro"})
+@ApiEnable(name = "JavaApiDocs示例", underscore = true, actives = {"test", "pro"})
 @ApiGlobalClass(name = Page.class, type = TypeEnum.PARAM, properties = {
         @ApiProperty(name = "current", description = "当前页", defaultValue = "1"),
         @ApiProperty(name = "size", description = "每页显示条数", defaultValue = "10"),
