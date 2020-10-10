@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.citrsw.apiexample.mapper.StudentMapper">
+    <resultMap id="resultMap" type="com.citrsw.apiexample.entity.Student">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="no" property="no" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="clazz_id" property="clazzId" jdbcType="BIGINT"/>
+        <result column="teacher_id" property="teacherId" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <select id="groupCountNumByClazzId" resultType="java.util.Map">
+        select tc.name as name, count(1) as count
+        from tb_student
+                     left join tb_clazz tc on tb_student.clazz_id = tc.id
+        group by tc.name
+        order by count
+    </select>
+    <select id="countNumByClazzId" resultType="java.util.Map" parameterType="Integer">
+     select tc.name as name, count(1) as count
+        from tb_student
+                     left join tb_clazz tc on tb_student.clazz_id = tc.id
+        where tc.id=#{id}
+    </select>
+</mapper>
