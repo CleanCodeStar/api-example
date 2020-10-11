@@ -8,10 +8,7 @@ import com.citrsw.apiexample.common.Result;
 import com.citrsw.apiexample.entity.User;
 import com.citrsw.apiexample.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -27,6 +24,7 @@ import java.util.Map;
 @RestController
 @Slf4j
 @ApiClass(value = "高级用法")
+@RequestMapping("/public")
 public class AdvancedController {
     private final UserService userService;
 
@@ -35,7 +33,7 @@ public class AdvancedController {
     }
 
     @ApiMethod("保存")
-    @PostMapping("/user")
+    @RequestMapping("/user")
     @ApiParamModelProperty(name = "username", description = "账号", required = true)
     @ApiParamModelProperty(name = "phone", description = "固定电话号码", required = true)
     public Result<Boolean> save(@RequestBody User user, HttpSession session) {

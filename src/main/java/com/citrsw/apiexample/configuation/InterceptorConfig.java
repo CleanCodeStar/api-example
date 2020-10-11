@@ -41,12 +41,12 @@ public class InterceptorConfig implements WebMvcConfigurer {
         // addPathPatterns 添加拦截
         // excludePathPatterns 排除拦截
         //登录拦截器
-        registry.addInterceptor(loginInterceptor)
-                //需要拦截的uri
-                .addPathPatterns("/**")
-                //需要跳过的uri
-                .excludePathPatterns("/citrsw/**", "/login", "/logout")
-                //拦截器的执行顺序
-                .order(1);
+//        registry.addInterceptor(loginInterceptor)
+//                //需要拦截的uri
+//                .addPathPatterns("/**")
+//                //需要跳过的uri
+//                .excludePathPatterns("/citrsw/**", "/login", "/logout")
+//                //拦截器的执行顺序
+//                .order(1);
     }
 }
