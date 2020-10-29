@@ -61,5 +61,6 @@ public class User implements Serializable {
      */
     @ApiMapProperty(name = "level", description = "用户等级", type = "int")
     @ApiMapProperty(name = "integral", description = "用户积分", type = "int")
+    @ApiProperty(description = "用户扩展信息")
     private Map<String, Integer> userInfo;
 }

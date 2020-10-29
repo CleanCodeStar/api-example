@@ -1,6 +1,8 @@
 package com.citrsw.apiexample.common;
 
 
+import com.citrsw.annatation.ApiMethod;
+import com.citrsw.annatation.ApiProperty;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,17 +15,20 @@ import java.io.Serializable;
  * @date 2019-09-19 09:02:33
  */
 @Data
+@ApiMethod("返回对象")
 public class Result<T> implements Serializable {
     private static final long serialVersionUID = -2492072809889519824L;
 
     /**
      * 响应编码
      */
+    @ApiProperty(description = "响应编码")
     private Integer code;
 
     /**
      * 响应消息
      */
+    @ApiProperty(description = "响应消息")
     private String msg;
 
     /**
