@@ -1,8 +1,14 @@
 # javaApiDocs文档
-### 版本说明
+# 版本说明
 v1.3.0-beta
-   
+
 增加生成Android和IOS代码
+
+v1.5.8-beta
+
+1. 优化VUE生成代码的结构
+2. 优化搜索功能，支持类描述、方法描述、请求地址搜索  由《胡小勇》同学提出
+
 
 [TOC]
 
@@ -27,7 +33,7 @@ ip:端口/项目名/citrsw/index.html
 <dependency>
     <groupId>com.citrsw</groupId>
     <artifactId>java-api-docs</artifactId>
-    <version>1.3.0-beta</version>
+    <version>1.5.8-beta</version>
 </dependency>
 ```
 
